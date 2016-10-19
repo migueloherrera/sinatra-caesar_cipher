@@ -1,12 +1,12 @@
 require 'sinatra'
 
 get '/' do
-  erb: index
+  erb :index
 end
 
 post '/' do
-  @string = caesar_cipher(params[:text], 5)
-  erb: index
+  @string = caesar_cipher(params[:text], params[:shift_factor].to_i)
+  erb :index
 end
 
 def caesar_cipher(string, shift_factor)

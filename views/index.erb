@@ -2,18 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Ceasar Cipher</title>
+    <title>Caesar Cipher Reloaded</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
-    <h1>Ceasar Cipher</h1>
+    <h1>Caesar Cipher Reloaded</h1>
 
     <form method="POST" action="/">
       <span>Text to Cipher:</span>
       <input type="text" name="text"/>
+      <span>Shift Factor:</span>
+      <input type="text" name="shift_factor" value="5">
       <input type="submit" value="Cipher"/>
       <br />
     </form>
 
-    <p>Coded string: <%= @string %></p>
+    <% if @string %>
+      <p>Coded string: <span><%= @string %></span></p>
+    <% end %>
   </body>
 </html>
