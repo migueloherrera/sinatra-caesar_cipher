@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Caesar Cipher Reloaded</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <h1>Caesar Cipher Reloaded</h1>
+    <a class="home" href="/">Home</a>
+
+    <form method="POST" action="/caesar_cipher">
+      <span>Text to Cipher:</span>
+      <input type="text" name="text"/>
+      <span>Shift Factor:</span>
+      <input type="text" name="shift_factor" value="5">
+      <input type="submit" value="Cipher"/>
+      <br />
+    </form>
+
+    <% if @string %>
+      <p>Coded string: <span><%= @string %></span></p>
+    <% end %>
+  </body>
+</html>

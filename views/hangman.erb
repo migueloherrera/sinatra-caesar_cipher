@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="hangman.css" type="text/css" />
+  </head>
+  <body>
+    <h1>Hangman</h1>
+    <a class="home" href="/">Home</a>
+
+    <form method="POST" action="/hangman">
+      <span>Type a letter:</span>
+      <input type="text" name="letter"/>
+      <input type="submit" value="Search"/>
+      <br />
+    </form>
+    
+    <% if @letter %>
+      <p>Letter entered: <span><%= @letter %></span></p>
+    <% end %>
+    
+    <% if @secret_word %>
+      <p>Secret Word: <span><%= @secret_word %></span></p>
+    <% end %>
+
+  </body>
+</html>
