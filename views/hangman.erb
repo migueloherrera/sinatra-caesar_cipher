@@ -10,18 +10,21 @@
     <a class="home" href="/">Home</a>
 
     <form method="POST" action="/hangman">
-      <span>Type a letter:</span>
-      <input type="text" name="letter"/>
+      <span>Guess a letter:</span>
+      <input type="text" name="letter" maxlength="1" />
       <input type="submit" value="Search"/>
       <br />
     </form>
     
     <% if @letter %>
       <p>Letter entered: <span><%= @letter %></span></p>
+      <p>Letters used: <%= @letters %></p>
     <% end %>
     
     <% if @secret_word %>
       <p>Secret Word: <span><%= @secret_word %></span></p>
+      <%= @show_word %> == <%= @turn %>
+      Message: <%= @error_message %>
     <% end %>
 
   </body>
