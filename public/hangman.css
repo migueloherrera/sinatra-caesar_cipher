@@ -99,6 +99,22 @@ h1 {
   color: #2B85BE;
 }
 
+.image {
+  padding: 10px;
+}
+
+.guesses {
+  font-size: 3em;
+  padding: 30px 10px 10px 10px;
+  color: #000000;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  padding: 10px;
+}
+
 form {
   padding: 35px 15px;
   font-size: 2em;
@@ -124,9 +140,37 @@ p {
   border: 1px solid #D3D3D3;
 }
 
-p span {
+p span, finalmessage {
   color: #FFFFFF;
   background: #2B85BE;
   padding: 8px;
   border-radius: 3px;
+}
+
+.finalmessage {
+  font-size: 3em;
+  padding: 20px;
+  margin: 10px;
+}
+
+.continue {
+  padding: 20px;
+  margin: 10px;
+}
+
+.continue a {
+  width: 300px;
+  height: 50px;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 8px;
+  margin: 10px;
+  color: #FFFFFF;
+  background: #2B85BE;
+}
+
+.continue a:hover {
+  border: 1px solid #2B85BE;
+  background: #F2F1F0;
+  color: #2B85BE;
 }

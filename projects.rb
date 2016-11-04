@@ -19,6 +19,7 @@ end
 get '/hangman' do
   setup_game
   @show_word = session[:show_word]
+  @turn = session[:turn]
   erb :hangman
 end
 
@@ -73,12 +74,12 @@ def check_letter(letter)
     elsif !session[:secret_word].include? letter
       session[:used_words] << letter
       session[:turn] = session[:turn].to_i - 1
-      session[:turn] <= 0 ? "you lost!" : "One less chance"
+      session[:turn] <= 0 ? "you lost!" : " "
     else
       word = session[:secret_word].split('')
       word.each_with_index { |x, i| session[:show_word][i] = x if word[i] == letter}
       session[:used_words] << letter
-      won? ? "you won!" : letter
+      won? ? "you won!" : " "
     end
   else
     return "Invalid entry, please try again...!"

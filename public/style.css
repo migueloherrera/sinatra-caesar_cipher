@@ -99,6 +99,29 @@ h1 {
   color: #2B85BE;
 }
 
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.game a {
+  width: 250px;
+  height: 200px;
+  text-decoration: none;
+  font-size: 36px;
+  padding: 50px;
+  border: 1px solid #2B85BE;
+  margin: 10px;
+  float: left;
+  background: #F2F1F0;
+  color: #2B85BE;
+}
+
+.game a:hover {
+  color: #FFFFFF;
+  background: #2B85BE;
+}
+
 form {
   padding: 35px 15px;
   font-size: 2em;

@@ -9,33 +9,28 @@
     <h1>Hangman</h1>
     <a class="home" href="/">Home</a>
     
-    palabra <%= @show_word.join(' ') %>
-    <% if @error_message == "you lost!" %>
-      You lost!   
-      <a href="/">Continue</a>
-    <% elsif @error_message == "you won!" %>
-      You won!
-      <a href="/">Continue</a>
-    <% else %>
+    <div class="image"><img src="/<%= @turn %>.png" alt="hangman face"></div>
+    <div class="guesses"><%= @show_word.join(' ') %></div>
     
+    <% if @error_message == "you lost!" %>
+      <div class="finalmessage">You lost! The secret word is <%= @secret_word %></div>
+      <div class="continue"><a href="/">Continue</a></div>
+    <% elsif @error_message == "you won!" %>
+      <div class="finalmessage">You won!</div>
+      <div class="continue"><a href="/">Continue</a></div>
+    <% else %>
+      <div class="error"><%= @error_message %></div>   
       <form method="POST" action="/hangman">
         <span>Guess a letter:</span>
-        <input type="text" name="letter" maxlength="1" />
+        <input type="text" name="letter" maxlength="1" autocomplete="off" />
         <input type="submit" value="Search"/>
         <br />
       </form>
       
-      <% if @letter %>
-        <p>Letter entered: <span><%= @letter %></span></p>
-        <p>Letters used: <%= @letters.join(', ') %></p>
-        
+      <% if @letters %>
+        <p>Letters used: <span><%= @letters.join(', ') %></span> Turns left: <span><%= @turn %></span></p>
       <% end %>
       
-      <% if @secret_word %>
-        <p>Secret Word: <span><%= @secret_word %></span></p>
-         == <%= @turn %>
-        Message: <%= @error_message %>
-      <% end %>
     <% end %>
   </body>
 </html>
